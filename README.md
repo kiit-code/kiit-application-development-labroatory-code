@@ -1,1 +1,0 @@
-# kiit-app-dev-assignment-01
