@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Exam Portal</title>
 </head>
+
 <body>
     <div>
         <header>
@@ -13,12 +15,11 @@
     </div>
 
     <div>
-        <img src="img.jpeg" alt="E-Exam Portal Image" width="300">
-        <p>
-            The e-Exam Portal is your one-stop destination for online exams, forums, repositories, 
-            and personalized walls. Whether you’re a student or a professional, our platform offers 
-            streamlined services for your needs.
-        </p>
+        <form>
+            <label for="search-bar">Search:</label>
+            <input type="text" id="search-bar" name="search" placeholder="Search...">
+            <button type="button">Search</button>
+        </form>
     </div>
 
     <div>
@@ -34,36 +35,45 @@
     </div>
 
     <div>
-        <form>
-            <label for="search-bar">Search:</label>
-            <input type="text" id="search-bar" name="search" placeholder="Search...">
-            <button type="button">Search</button>
-        </form>
-    </div>
-
-    <div>
         <section>
             <h2>Login/Register</h2>
             <form>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username"><br>
-                
+
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password"><br>
-                
-                <button type="button">Login</button>
+
+                <a href="login.html"><button type="button">Login</button></a>
                 <a href="register.html"><button type="button">Register</button></a>
             </form>
         </section>
     </div>
 
+    <div>
+        <img src="img.jpeg" alt="E-Exam Portal Image" width="300">
+        <p>
+            The e-Exam Portal is your one-stop destination for online exams, forums, repositories,
+            and personalized walls. Whether you’re a student or a professional, our platform offers
+            streamlined services for your needs.
+        </p>
+    </div>
+
+
+
+
+
+
+
     <footer>
         <p>© 2024 e-Exam Portal. All Rights Reserved.</p>
+        <!-- In the footer section of index.html, update these links -->
         <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
         </ul>
     </footer>
 </body>
+
 </html>
