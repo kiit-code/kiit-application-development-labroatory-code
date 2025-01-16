@@ -1,0 +1,25 @@
+<!-- Question 7: Write a program in JavaScript for the addition of two integer numbers taken as input from the user and display the result. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Addition of Two Numbers</title>
+</head>
+<body>
+    <h1>Add Two Numbers</h1>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="addNumbers()">Add</button>
+    <p id="result"></p>
+
+    <script>
+        function addNumbers() {
+            const num1 = parseInt(document.getElementById("num1").value);
+            const num2 = parseInt(document.getElementById("num2").value);
+            const sum = num1 + num2;
+
+            document.getElementById("result").innerText = `The sum of ${num1} and ${num2} is ${sum}.`;
+        }
+    </script>
+</body>
+</html>

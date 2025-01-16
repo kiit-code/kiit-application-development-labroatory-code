@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        button {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Assignment Solutions</h1>
+
+    <!-- Question 1 -->
+    <section>
+        <h2>Question 1: Display an Integer</h2>
+        <input type="number" id="q1_input" placeholder="Enter an integer">
+        <button onclick="displayNumber()">Submit</button>
+        <p id="q1_result"></p>
+        <script>
+            function displayNumber() {
+                const num = document.getElementById("q1_input").value;
+                document.getElementById("q1_result").innerText = `You entered: ${num}`;
+            }
+        </script>
+    </section>
+
+    <!-- Question 2 -->
+    <section>
+        <h2>Question 2: Check Prime</h2>
+        <input type="number" id="q2_input" placeholder="Enter an integer">
+        <button onclick="checkPrime()">Check</button>
+        <p id="q2_result"></p>
+        <script>
+            function checkPrime() {
+                const num = parseInt(document.getElementById("q2_input").value);
+                let isPrime = true;
+
+                if (num <= 1) {
+                    isPrime = false;
+                } else {
+                    for (let i = 2; i <= Math.sqrt(num); i++) {
+                        if (num % i === 0) {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                }
+
+                document.getElementById("q2_result").innerText = isPrime 
+                    ? `${num} is a prime number.` 
+                    : `${num} is not a prime number.`;
+            }
+        </script>
+    </section>
+
+    <!-- Question 3 -->
+    <section>
+        <h2>Question 3: Check Palindrome</h2>
+        <input type="number" id="q3_input" placeholder="Enter an integer">
+        <button onclick="checkPalindrome()">Check</button>
+        <p id="q3_result"></p>
+        <script>
+            function checkPalindrome() {
+                const num = document.getElementById("q3_input").value;
+                const reversedNum = num.split("").reverse().join("");
+
+                document.getElementById("q3_result").innerText = num === reversedNum 
+                    ? `${num} is a palindrome.` 
+                    : `${num} is not a palindrome.`;
+            }
+        </script>
+    </section>
+
+    <!-- Question 4 -->
+    <section>
+        <h2>Question 4: Check Leap Year</h2>
+        <input type="number" id="q4_input" placeholder="Enter a year">
+        <button onclick="checkLeapYear()">Check</button>
+        <p id="q4_result"></p>
+        <script>
+            function checkLeapYear() {
+                const year = parseInt(document.getElementById("q4_input").value);
+
+                document.getElementById("q4_result").innerText = 
+                    (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0) 
+                        ? `${year} is a leap year.` 
+                        : `${year} is not a leap year.`;
+            }
+        </script>
+    </section>
+
+    <!-- Question 5 -->
+    <section>
+        <h2>Question 5: Sum of Digits</h2>
+        <input type="number" id="q5_input" placeholder="Enter an integer">
+        <button onclick="calculateSumOfDigits()">Calculate</button>
+        <p id="q5_result"></p>
+        <script>
+            function calculateSumOfDigits() {
+                const num = document.getElementById("q5_input").value;
+                let sum = 0;
+
+                for (let digit of num) {
+                    sum += parseInt(digit);
+                }
+
+                document.getElementById("q5_result").innerText = `The sum of digits of ${num} is ${sum}.`;
+            }
+        </script>
+    </section>
+
+    <!-- Question 6 -->
+    <section>
+        <h2>Question 6: Reverse a Number</h2>
+        <input type="number" id="q6_input" placeholder="Enter an integer">
+        <button onclick="reverseNumber()">Reverse</button>
+        <p id="q6_result"></p>
+        <script>
+            function reverseNumber() {
+                const num = document.getElementById("q6_input").value;
+                const reversedNum = num.split("").reverse().join("");
+
+                document.getElementById("q6_result").innerText = `The reverse of ${num} is ${reversedNum}.`;
+            }
+        </script>
+    </section>
+
+    <!-- Question 7 -->
+    <section>
+        <h2>Question 7: Addition of Two Numbers</h2>
+        <input type="number" id="q7_num1" placeholder="Enter first number">
+        <input type="number" id="q7_num2" placeholder="Enter second number">
+        <button onclick="addNumbers()">Add</button>
+        <p id="q7_result"></p>
+        <script>
+            function addNumbers() {
+                const num1 = parseInt(document.getElementById("q7_num1").value);
+                const num2 = parseInt(document.getElementById("q7_num2").value);
+                const sum = num1 + num2;
+
+                document.getElementById("q7_result").innerText = `The sum of ${num1} and ${num2} is ${sum}.`;
+            }
+        </script>
+    </section>
+
+    <!-- Question 8 -->
+    <section>
+        <h2>Question 8: Voting Eligibility</h2>
+        <input type="number" id="q8_input" placeholder="Enter your age">
+        <button onclick="checkVotingEligibility()">Check</button>
+        <p id="q8_result"></p>
+        <script>
+            function checkVotingEligibility() {
+                const age = parseInt(document.getElementById("q8_input").value);
+
+                document.getElementById("q8_result").innerText = age >= 18 
+                    ? `You are eligible for voting.` 
+                    : `You are not eligible for voting.`;
+            }
+        </script>
+    </section>
+</body>
+</html>

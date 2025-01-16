@@ -1,0 +1,26 @@
+<!-- Question 4: Write a program in JavaScript to take a year as input from the text box, check if it is a leap year or not, and display the result in a paragraph. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leap Year Checker</title>
+</head>
+<body>
+    <h1>Leap Year Checker</h1>
+    <input type="number" id="inputYear" placeholder="Enter a year">
+    <button onclick="checkLeapYear()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkLeapYear() {
+            const year = parseInt(document.getElementById("inputYear").value);
+
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                document.getElementById("result").innerText = `${year} is a leap year.`;
+            } else {
+                document.getElementById("result").innerText = `${year} is not a leap year.`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<h1>Registration Form</h1>
+    <form>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" name="id" id="id"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password" id="password"></td>
+            </tr>
+            <tr>
+                <td>E-Mail ID:</td>
+                <td><input type="email" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="text" name="age" id="age"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="male" id="male"> Male
+                    <input type="radio" name="gender" value="female" id="female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>College Address:</td>
+                <td><textarea name="address" id="address" rows="4" cols="30"></textarea></td>
+            </tr>
+            <tr>
+                <td>Branch:</td>
+                <td>
+                    <select name="branch" id="branch">
+                        <option value="cse">Computer Science</option>
+                        <option value="ece">Electronics</option>
+                        <option value="mech">Mechanical</option>
+                        <option value="civil">Civil</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Technical Skills:</td>
+                <td>
+                    <input type="checkbox" name="skills" value="c"> C
+                    <input type="checkbox" name="skills" value="java"> Java
+                    <input type="checkbox" name="skills" value="python"> Python
+                    <input type="checkbox" name="skills" value="jsp"> JSP
+                </td>
+            </tr>
+            <tr>
+                <td>Resume Upload:</td>
+                <td><input type="file" name="resume" id="resume"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <a href="./index.html">Back</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- Question 6: Write a program in JavaScript to take an integer value as input from the text box, find its reverse, and display the result in a paragraph. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse of a Number</title>
+</head>
+<body>
+    <h1>Reverse a Number</h1>
+    <input type="number" id="inputNumber" placeholder="Enter an integer">
+    <button onclick="reverseNumber()">Reverse</button>
+    <p id="result"></p>
+
+    <script>
+        function reverseNumber() {
+            const num = document.getElementById("inputNumber").value;
+            const reversedNum = num.split("").reverse().join("");
+
+            document.getElementById("result").innerText = `The reverse of ${num} is ${reversedNum}.`;
+        }
+    </script>
+</body>
+</html>

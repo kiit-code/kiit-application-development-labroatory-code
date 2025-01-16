@@ -1,0 +1,27 @@
+<!-- Question 8: Write a program in JavaScript to take age as input from the text box, and if age is greater than or equal to 18, display “eligible for voting” in a paragraph, otherwise display “not eligible for voting.” -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voting Eligibility Checker</title>
+</head>
+<body>
+    <h1>Voting Eligibility Checker</h1>
+    <input type="number" id="inputAge" placeholder="Enter your age">
+    <button onclick="checkVotingEligibility()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkVotingEligibility() {
+            const age = parseInt(document.getElementById("inputAge").value);
+
+            if (age >= 18) {
+                document.getElementById("result").innerText = `You are eligible for voting.`;
+            } else {
+                document.getElementById("result").innerText = `You are not eligible for voting.`;
+            }
+        }
+    </script>
+</body>
+</html>

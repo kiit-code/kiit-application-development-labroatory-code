@@ -1,0 +1,28 @@
+<!-- Question 5: Write a program in JavaScript to take an integer value as input from the text box, find the sum of its digits, and display the result in a paragraph. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Digits</title>
+</head>
+<body>
+    <h1>Sum of Digits Calculator</h1>
+    <input type="number" id="inputNumber" placeholder="Enter an integer">
+    <button onclick="calculateSumOfDigits()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateSumOfDigits() {
+            const num = document.getElementById("inputNumber").value;
+            let sum = 0;
+
+            for (let digit of num) {
+                sum += parseInt(digit);
+            }
+
+            document.getElementById("result").innerText = `The sum of digits of ${num} is ${sum}.`;
+        }
+    </script>
+</body>
+</html>
+
