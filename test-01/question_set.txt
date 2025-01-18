@@ -1,0 +1,36 @@
+Question-1(Set-1)
+Create a web page using HTML with the following components:
+Input Fields:
+ Name: A text box to enter the student's name.  Roll Number: A text box for the roll number.  Gender: Radio buttons for selecting gender (Male/Female).  Branch: A dropdown menu to choose the student's branch.  Marks: Five text boxes for entering marks in five subjects (each subject's marks out of 100).  Two paragraphs
+Buttons:
+Show Details: Displays the entered user information in the first paragraph. Show Grade: Displays the calculated grade in the second paragraph. JavaScript Functionality:
+When the user clicks the Show Details button, the first paragraph should display all the entered
+information. When the user clicks the Show Grade button, the second paragraph should display the grade
+based on the average marks using the following criteria:
+Average marks > 90: Grade O
+Average marks 80–90: Grade E
+Average marks 70–80: Grade A
+Average marks 60–70: Grade B
+Average marks 50–60: Grade D
+
+Average marks < 50: Fail
+Use a switch-case statement to determine the grade. Write the HTML structure and JavaScript code to implement the above functionality.
+
+Question-2(Set-2)
+Create a web page using HTML with the following components:
+Input Fields:
+1.⁠ ⁠Name: A text box to enter the employee's name. 2. Employee ID: A text box for entering the employee ID. 3. Gender: Radio buttons for selecting gender (Male/Female). 4. Department: A dropdown menu to select the employee's department. 5. Basic Salary, HRA, and Allowances: Three separate text boxes to input the employee's
+basic salary, house rent allowance (HRA), and other allowances. 6. Three paragraphs
+Buttons:
+1.⁠ ⁠Show Details: Displays the entered employee information in the first paragraph.
+
+2.⁠ ⁠Show Gross Salary: Calculates and displays the employee's gross salary in the second
+paragraph. Gross salary = Basic Salary + HRA + Allowances. 3. Show Income Category: Determines and displays the employee's income category in the
+third paragraph based on the gross salary using a switch-case statement:
+1.⁠ ⁠High Income Group: Gross salary > 300,000 per month. 2. Medium Income Group: Gross salary between 100,000 and 300,000 per month. 3. Low Income Group: Gross salary < 100,000 per month. JavaScript Functionality:
+1.⁠ ⁠When the user clicks the Show Details button, the first paragraph should display all the
+entered employee information. 2. When the user clicks the Show Gross Salary button, the second paragraph should
+display the calculated gross salary. 3. When the user clicks the Show Income Category button, the third paragraph should
+display the determined income category using a switch-case statement to classify the
+
+gross salary. Write the HTML structure and JavaScript code to implement the above functionality.

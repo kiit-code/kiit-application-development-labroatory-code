@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details and Grade</title>
+    <script>
+        function showDetails() {
+            const name = document.getElementById('name').value;
+            const rollNumber = document.getElementById('rollNumber').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const branch = document.getElementById('branch').value;
+            const marks = [];
+
+            for (let i = 1; i <= 5; i++) {
+                marks.push(parseFloat(document.getElementById(`marks${i}`).value) || 0);
+            }
+
+            const details = `Name: ${name}, Roll Number: ${rollNumber}, Gender: ${gender}, Branch: ${branch}, Marks: ${marks.join(", ")}`;
+            document.getElementById('detailsParagraph').innerText = details;
+        }
+
+        function showGrade() {
+            let totalMarks = 0;
+            for (let i = 1; i <= 5; i++) {
+                totalMarks += parseFloat(document.getElementById(`marks${i}`).value) || 0;
+            }
+
+            const avgMarks = totalMarks / 5;
+            let grade;
+            switch (true) {
+                case avgMarks > 90:
+                    grade = 'O';
+                    break;
+                case avgMarks > 80:
+                    grade = 'E';
+                    break;
+                case avgMarks > 70:
+                    grade = 'A';
+                    break;
+                case avgMarks > 60:
+                    grade = 'B';
+                    break;
+                case avgMarks > 50:
+                    grade = 'D';
+                    break;
+                default:
+                    grade = 'Fail';
+            }
+
+            document.getElementById('gradeParagraph').innerText = `Grade: ${grade}`;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Student Information</h1>
+    <label>Name: <input type="text" id="name"></label><br>
+    <label>Roll Number: <input type="text" id="rollNumber"></label><br>
+    <label>Gender:
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+    </label><br>
+    <label>Branch:
+        <select id="branch">
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">MECH</option>
+        </select>
+    </label><br>
+    <label>Marks:</label><br>
+    <input type="text" id="marks1" placeholder="Subject 1"><br>
+    <input type="text" id="marks2" placeholder="Subject 2"><br>
+    <input type="text" id="marks3" placeholder="Subject 3"><br>
+    <input type="text" id="marks4" placeholder="Subject 4"><br>
+    <input type="text" id="marks5" placeholder="Subject 5"><br>
+
+    <button onclick="showDetails()">Show Details</button>
+    <button onclick="showGrade()">Show Grade</button>
+
+    <p id="detailsParagraph"></p>
+    <p id="gradeParagraph"></p>
+</body>
+
+</html>
