@@ -6,4 +6,4 @@ We had this course in our 6th Semester of our curricula.
 
 Prof: Dr Rinku Datta Rakshit
 
-Course-Handout here.
+Course-Handout [here](https://github.com/annimukherjee/kiit-application-development-labroatory-code/blob/main/ADL-Lesson-Plan.pdf).
