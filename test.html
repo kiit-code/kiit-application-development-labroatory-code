@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="q1" type="text">
+    <button onclick="check()">Submit</button>
+    <p id="output"></p>
+    <script>
+        function check() {
+            let c = document.getElementById("q1").value;
+
+            let l = c.length;
+
+            let flag = false;
+            let flag2 = false;
+            let flag3 = false;
+
+
+
+
+            for (let i = 0; i < l; i++) {
+                console.log(i);
+                if ((c[i] == '0' || c[i] == '1' || c[i] == '2' || c[i] == '3' || c[i] == '4' || c[i] == '5' || c[i] == '6' || c[i] == '7' || c[i] == '8' || c[i] == '9')) {
+                    flag = true
+                }
+                if ((c[i] == '*' || c[i] == '&' || c[i] == '/' || c[i] == '@')) {
+                    flag2 = true
+                }
+
+                if (c[i] >= 'A' && c[i] <= 'Z') {
+                    flag3 = true; // Checks for uppercase letters
+                }
+            }
+
+            if (flag && flag2 && flag3) {
+                console.log("YES VALID");
+                document.getElementById("output").innerText = "YES VALID";
+            }
+            else {
+                console.log("NO INVALID");
+                document.getElementById("output").innerText = "NO INVALID";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
