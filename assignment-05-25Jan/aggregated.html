@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab-5 Assignment</title>
+</head>
+
+<body>
+    <!-- Problem 1: Personalized Greeting -->
+    <h2>Enter your name for a personalized greeting!</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="showGreeting()">Greet Me</button>
+    <p id="greetingMessage"></p>
+
+    <!-- Problem 2: List of Names -->
+    <h2>Enter your name and see it added to the list!</h2>
+    <input type="text" id="nameListInput" placeholder="Enter your name">
+    <button onclick="addNameToList()">Add Name</button>
+    <p id="namesDisplay"></p>
+
+    <!-- Problem 3: Array Manipulation -->
+    <h2>Array Manipulation</h2>
+    <input type="text" id="arrayValue" placeholder="Enter a value">
+    <button onclick="pushValue()">Push</button>
+    <button onclick="popValue()">Pop</button>
+    <button onclick="shiftValue()">Shift</button>
+    <button onclick="unshiftValue()">Unshift</button>
+    <p id="arrayStatus"></p>
+
+    <!-- Problem 4: Search and Sort -->
+    <h2>Search and Sort Operations</h2>
+    <input type="text" id="dynamicArrayInput" placeholder="Enter value">
+    <button onclick="addToDynamicArray()">Add to Array</button>
+    <p id="dynamicArrayStatus"></p>
+
+    <input type="text" id="searchValue" placeholder="Enter search value">
+    <button onclick="searchElement()">Search</button>
+    <p id="searchResult"></p>
+
+    <button onclick="sortAscending()">Sort Ascending</button>
+    <button onclick="sortDescending()">Sort Descending</button>
+
+    <script>
+        // Problem 1
+        function showGreeting() {
+            const name = document.getElementById('nameInput').value;
+            document.getElementById('greetingMessage').textContent = `Hello, ${name}! Welcome to the website!`;
+        }
+
+        // Problem 2
+        let names = [];
+        function addNameToList() {
+            const name = document.getElementById('nameListInput').value;
+            names.push(name);
+            document.getElementById('namesDisplay').textContent = `Names entered: ${names.join(', ')}`;
+        }
+
+        // Problem 3
+        let myArray = [];
+        function pushValue() {
+            const value = document.getElementById('arrayValue').value;
+            myArray.push(value);
+            updateArrayStatus();
+        }
+        function popValue() {
+            myArray.pop();
+            updateArrayStatus();
+        }
+        function shiftValue() {
+            myArray.shift();
+            updateArrayStatus();
+        }
+        function unshiftValue() {
+            const value = document.getElementById('arrayValue').value;
+            myArray.unshift(value);
+            updateArrayStatus();
+        }
+        function updateArrayStatus() {
+            document.getElementById('arrayStatus').textContent = `Array: [${myArray.join(', ')}]`;
+        }
+
+        // Problem 4
+        let dynamicArray = [];
+        function addToDynamicArray() {
+            const value = document.getElementById('dynamicArrayInput').value;
+            dynamicArray.push(value);
+            updateDynamicArrayStatus();
+        }
+        function searchElement() {
+            const value = document.getElementById('searchValue').value;
+            const index = dynamicArray.indexOf(value);
+            document.getElementById('searchResult').textContent =
+                index !== -1 ? `Element found at index ${index}` : "Element not found";
+        }
+        function sortAscending() {
+            dynamicArray.sort((a, b) => a - b);
+            updateDynamicArrayStatus();
+        }
+        function sortDescending() {
+            dynamicArray.sort((a, b) => b - a);
+            updateDynamicArrayStatus();
+        }
+        function updateDynamicArrayStatus() {
+            document.getElementById('dynamicArrayStatus').textContent`Array: [${dynamicArray.join(', ')}]`;
+        }
+    </script>
+</body>
+
+</html>
