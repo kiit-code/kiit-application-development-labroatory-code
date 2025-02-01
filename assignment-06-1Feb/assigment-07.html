@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regular Expression Validations</title>
+    <style>
+        .validator { border: 1px solid #ccc; padding: 20px; margin: 10px; }
+        input { margin: 5px; padding: 5px; }
+        button { padding: 5px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <!-- Task 1: Email Validator -->
+    <div class="validator">
+        <h3>Email Validator</h3>
+        <input type="text" id="email" placeholder="Enter email">
+        <button onclick="validateEmail()">Validate Email</button>
+        <span id="emailResult"></span>
+    </div>
+
+    <!-- Task 2: Phone Number Validator -->
+    <div class="validator">
+        <h3>Phone Number Validator</h3>
+        <input type="text" id="phone" placeholder="xxx-xxx-xxxx">
+        <button onclick="validatePhone()">Validate Phone</button>
+        <span id="phoneResult"></span>
+    </div>
+
+    <!-- Task 3: Password Strength Checker -->
+    <div class="validator">
+        <h3>Password Strength Checker</h3>
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword()">Check Strength</button>
+        <span id="passResult"></span>
+    </div>
+
+    <!-- Task 4: Word Search -->
+    <div class="validator">
+        <h3>Word Search</h3>
+        <input type="text" id="mainString" placeholder="Enter main string"><br>
+        <input type="text" id="searchWord" placeholder="Enter word to search">
+        <button onclick="searchWord()">Search Word</button>
+        <span id="searchResult"></span>
+    </div>
+
+    <!-- Task 5: Replace Vowels -->
+    <div class="validator">
+        <h3>Replace Vowels with Asterisks</h3>
+        <input type="text" id="inputString" placeholder="Enter string">
+        <button onclick="replaceVowels()">Replace Vowels</button>
+        <span id="vowelResult"></span>
+    </div>
+
+<script>
+// Task 1: Email Validation
+function validateEmail() {
+    const email = document.getElementById('email').value;
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    document.getElementById('emailResult').textContent = 
+        regex.test(email) ? "Valid Email" : "Invalid Email";
+}
+
+// Task 2: Phone Validation
+function validatePhone() {
+    const phone = document.getElementById('phone').value;
+    const regex = /^\d{3}-\d{3}-\d{4}$/;
+    document.getElementById('phoneResult').textContent = 
+        regex.test(phone) ? "Valid Phone" : "Invalid Phone";
+}
+
+// Task 3: Password Strength
+function checkPassword() {
+    const password = document.getElementById('password').value;
+    const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+    document.getElementById('passResult').textContent = 
+        regex.test(password) ? "Strong Password" : "Weak Password";
+}
+
+// Task 4: Word Search
+function searchWord() {
+    const mainString = document.getElementById('mainString').value;
+    const word = document.getElementById('searchWord').value;
+    const regex = new RegExp(word);
+    document.getElementById('searchResult').textContent = 
+        regex.test(mainString) ? "Word Found" : "Word Not Found";
+}
+
+// Task 5: Vowel Replacement
+function replaceVowels() {
+    const input = document.getElementById('inputString').value;
+    const result = input.replace(/[aeiou]/gi, '*');
+    document.getElementById('vowelResult').textContent = result;
+}
+
+// Task 6: Registration Page Implementation (Add to your existing Lab-2 form)
+/*
+1. Add onsubmit="return validateForm()" to your form tag
+2. Create validation functions for each field using the regex patterns above
+3. Prevent form submission if any validation fails
+Example:
+function validateForm() {
+    return validateEmail() && validatePhone() && checkPassword();
+}
+*/
+</script>
+</body>
+</html>

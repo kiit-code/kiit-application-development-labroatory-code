@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Programming Problems Solution</title>
+</head>
+<body>
+    <!-- Problem 1: Reverse Array -->
+    <div>
+        <h3>1. Reverse Array</h3>
+        <input type="text" id="inputArray" placeholder="Enter numbers separated by commas (e.g., 1,2,3,4)">
+        <button onclick="reverseArray()">Reverse Array</button>
+        <div id="arrayResult"></div>
+    </div>
+
+    <!-- Problem 2: Alternate Fibonacci & Prime -->
+    <div class="problem">
+        <h3>2. Alternate Sequence</h3>
+        <button onclick="generateSequence()">Generate Sequence</button>
+        <div id="sequenceResult"></div>
+    </div>
+
+    <!-- Problem 3: Exchange Array Elements -->
+    <div>
+        <h3>3. Array Exchange</h3>
+        <input type="text" id="arrayA" placeholder="Enter 15 numbers for array A (comma-separated)"><br>
+        <input type="text" id="arrayB" placeholder="Enter 15 numbers for array B (comma-separated)">
+        <button onclick="exchangeArrays()">Exchange Arrays</button>
+        <div id="exchangeResult"></div>
+    </div>
+
+    <!-- Problem 4: Digit Operations -->
+    <div>
+        <h3>4. Digit Sum & Factorial</h3>
+        <input type="text" id="numbersInput" placeholder="Enter 15 numbers separated by commas">
+        <button onclick="performDigitOps()">Calculate Operations</button>
+        <div id="digitResult"></div>
+    </div>
+
+<script>
+// Problem 1: Reverse Array
+function reverseArray() {
+    const input = document.getElementById('inputArray').value.trim();
+    
+    /* if (!input) {
+        alert('Please enter numbers');
+        return;
+    }  */
+
+    try {
+
+        const nums = input.split(',')
+            .map(num => num.trim()) // Remove extra spaces
+            .filter(num => num !== '' && !isNaN(num)) // Remove empty & invalid entries
+            .map(Number);
+
+        if (nums.length === 0) {
+            alert('Please enter valid numbers');
+            return;
+        }
+
+        const reversed = nums.reverse(); 
+        document.getElementById('arrayResult').innerText = `Reversed Array: ${reversed.join(', ')}`;
+    } catch (error) {
+        alert('Invalid input format! Use comma-separated numbers.');
+    }
+}
+
+// Problem 2: Alternate Sequence
+function generateSequence() {
+    let fib = [0, 1], primes = [], count = 0, num = 2;
+    
+    // Generate Fibonacci numbers
+    for(let i = 2; i < 10; i++) fib[i] = fib[i-1] + fib[i-2];
+    
+    // Generate Prime numbers
+    while(count < 10) {
+        if(isPrime(num)) primes[count++] = num;
+        num++;
+    }
+    
+    // Create alternate sequence
+    let result = [];
+    for(let i = 0; i < 10; i++) result.push(fib[i], primes[i]);
+    
+    document.getElementById('sequenceResult').innerHTML = 
+        `Sequence: ${result.join(' ')}`;
+}
+
+function isPrime(n) {
+    if(n <= 1) return false;
+    for(let i = 2; i*i <= n; i++) if(n%i === 0) return false;
+    return true;
+}
+
+// Problem 3: Array Exchange
+function exchangeArrays() {
+    try {
+        const aInput = document.getElementById('arrayA').value.split(',').map(Number);
+        const bInput = document.getElementById('arrayB').value.split(',').map(Number);
+        
+        if(aInput.length !== 15 || bInput.length !== 15) {
+            return alert('Both arrays must contain exactly 15 numbers');
+        }
+        
+        let a = [...aInput];
+        let b = [...bInput];
+        let output = `Original Arrays:<br>A: [${a}]<br>B: [${b}]<br>`;
+        
+        for(let i = 0; i < 15; i++) {
+            [a[i], b[14-i]] = [b[14-i], a[i]];
+        }
+        
+        output += `<br>After Exchange:<br>A: [${a}]<br>B: [${b}]`;
+        document.getElementById('exchangeResult').innerHTML = output;
+    } catch {
+        alert('Invalid input format! Use comma-separated numbers');
+    }
+}
+
+// Problem 4: Digit Operations
+// Problem 4: Digit Operations
+// Problem 4: Digit Operations
+function performDigitOps() {
+    const input = document.getElementById('numbersInput').value.trim();
+    if (!input) return alert('Please enter numbers');
+
+    try {
+        const nums = input.split(',').map(num => num.trim()).filter(num => num !== '').map(Number);
+        if (nums.length !== 15) return alert('Exactly 15 numbers are required');
+
+        let output = '<pre>Number   | Digit Sum | Unit Factorial\n';
+        output += '------------------------------------\n';
+
+        nums.forEach(num => {
+            if (isNaN(num)) throw new Error("Invalid number format");
+
+            // Sum of digits
+            const sum = num.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
+
+            // Extract unit digit correctly
+            const unit = Math.abs(num) % 10;
+
+
+            // Compute factorial of unit digit
+            const fact = factorial(unit);
+
+            output += `${num.toString().padEnd(8)} | ${sum.toString().padEnd(9)} | ${fact}\n`;
+        });
+
+        output += '</pre>';
+        document.getElementById('digitResult').innerHTML = output;
+    } catch (error) {
+        alert('Invalid input format! Use comma-separated numbers.');
+    }
+}
+
+// Helper function to calculate factorial
+function factorial(n) {
+    return n === 0 || n === 1 ? 1 : Array.from({ length: n }, (_, i) => i + 1).reduce((a, b) => a * b, 1);
+}
+
+
+</script>
+</body>
+</html>
